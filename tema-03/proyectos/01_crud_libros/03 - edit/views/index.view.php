@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 6.0</title>
+
+    <!-- css bootstrap 6.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+
+
+    <!-- icons bootstrap 1.13.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- capa principal de la aplicación -->
+    <div class="container mt-3">
+
+        <!-- cabecera de la aplicación -->
+        <header class="bg-primary text-white p-3 mb-3">
+            <i class="bi bi-stack"></i>
+            <span class="fs-6">Proyecto 3.1 - CRUD de Libros</span>
+        </header>
+
+        <!-- contenido principal de la aplicación -->
+        <main>
+            <div class="content">
+
+                <legend class="fs-5 mb-3">Tabla de libros</legend>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Editorial</th>
+                            <th scope="col">Género</th>
+                            <th scope="col" class="text-end">Precio</th>
+                            <th scope="col" class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($libros as $indice => $libro) : ?>
+                            <tr>
+                                <th scope="row"><?= $libro['id'] ?></th>
+                                <td><?= $libro['titulo'] ?></td>
+                                <td><?= $libro['autor'] ?></td>
+                                <td><?= $libro['editorial'] ?></td>
+                                <td><?= implode(', ', $libro['genero']) ?></td>
+                                <td class="text-end"><?= number_format($libro['precio'], 2) ?> €</td>
+                                
+                                <!-- botones de acción -->
+                                <td>
+                                    <!-- editar -->
+                                    <!-- al controlador edit le estoy pasando mediante el controlador get el parametro incice que me va a indicar el indice del libro que voy a editar -->
+                                    <a href="edit.php?indice=<?= $indice ?>" class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <!-- eliminar -->
+                                    <a href="delete.php?id=<?= $libro['id'] ?>" class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                    <!-- mostrar -->
+                                    <a href="show.php?id=<?= $libro['id'] ?>" class="btn btn-sm btn-outline-success">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                   
+                        <tr>
+                            <td colspan="6" class="text-end"><strong>Total:</strong></td>
+                            <td class="text-end"><strong><?= number_format(array_sum(array_column($libros, 'precio')), 2) ?> €</strong></td>
+                        </tr>
+                </table>
+
+            </div>
+
+        </main>
+
+        <!-- pie de página de la aplicación -->
+        <footer class="footer mt-auto py-3 fixed-bottom bg-light">
+            <div class="container">
+                <span class="text-muted">&copy; 2026
+                    Alejandro Peralta Oliva - DWES - 2º DAW - Curso 26/27
+                </span>
+            </div>
+        </footer>
+
+        <!-- js bootstrap básico 6.0 -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+
+    </div>
+</body>
+
+</html>
+                        

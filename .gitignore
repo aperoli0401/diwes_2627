@@ -1,0 +1,8 @@
+# Ignorar archivos ejecutables e instaladores pesados
+*.exe
+*.msi
+*.iso
+
+# Ignorar archivos de configuración del sistema o del entorno
+.DS_Store
+Thumbs.dbgit 
