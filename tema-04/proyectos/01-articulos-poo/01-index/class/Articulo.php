@@ -1,63 +1,61 @@
 <?php
 
-/**
- *  fichero : Articulos.php
- *  @author : Alejandro Peralta Oliva
- *  @fecha : 12/11/2026
- *  @proyecto : proyecto41
- */
-
 /*
-    Clase Articulo 
-
-    @description Clase que representa un artículo con propiedades métodos para mejorar la información. 
-    Tiene que cumplir la propiedad de encapsulamiento.
-    
-    @atributos:
-        - $id : Identificador único del artículo.
-        - $descripción : descripción del artículo.
-        - $modelo : modelo del artículo.
-        - $marca : selecciona la marca de una lista.
-        - $categoria : selecciona las categorias de una lista de checkbox.
-        - $unidades : stock en almacen de este artículo.
-        - $precio : precio del artículo
-
-    @métodos :
-        - constructor: parámetros opcionales
-        - getters y setters
+    fichero: Articulos.php
+    @autor: Juan Carlos Moreo
+    @fecha: 
+    @proyecto: proyecto41
 */
 
+/**
+ * Clase Articulo
+ *
+ * @description Clase que representa un artículo con propiedades  métodos para manejar su información. Tiene que cumplir la propiedad de encapsulamiento
+ * 
+ * @abributos:
+ *  - $id: Identificador único del artículo.
+ *  - $descripcion: descripción del artículo.
+ *  - $modelo: modelo del artículo
+ *  - $marca: selecciona la marca de una lista
+ *  - $categorias: selecciona las categorias de una lista checbox
+ *  - $unidades: stock en almacén de este artículo
+ *  - $precio: precio del artículo
+ * 
+ * @métodos:
+ *  - constructor: parámetros opcionales
+ *  - getters y setters
+ */
+
 Class Articulo {
+
     private ?int $id;
-    private ?string $descripcion;
+    private ?string  $descripcion;
     private ?string $modelo;
     private ?string $marca;
-    private ?array $categoria;
+    private ?array $categorias;
     private ?int $unidades;
     private ?float $precio;
 
     // Método constructor con encapsulamiento
-    public function _construct(
+    public function __construct(
         ?int $id = null,
         ?string $descripcion = null,
         ?string $modelo = null,
         ?string $marca = null,
-        ?array $categoria = [],
+        ?array $categorias = [],
         ?int $unidades = null,
         ?float $precio = null
-    ):void {
-        $this-> id = $id;
-        $this-> descripcion = $descripcion;
-        $this-> modelo = $modelo;
-        $this-> marca = $marca;
-        $this-> categoria = $categoria;
-        $this-> unidades = $unidades;
-        $this-> precio = $precio;
+    ) {
+        $this->id = $id;
+        $this->descripcion = $descripcion;
+        $this->modelo = $modelo;
+        $this->marca = $marca;
+        $this->categorias = $categorias;
+        $this->unidades = $unidades;
+        $this->precio = $precio;
     }
 
     // Getters y Setters
-    
-
     /**
      * Get the value of id
      */
@@ -131,19 +129,19 @@ Class Articulo {
     }
 
     /**
-     * Get the value of categoria
+     * Get the value of categorias
      */
-    public function getCategoria(): ?array
+    public function getCategorias(): ?array
     {
-        return $this->categoria;
+        return $this->categorias;
     }
 
     /**
-     * Set the value of categoria
+     * Set the value of categorias
      */
-    public function setCategoria(?array $categoria): self
+    public function setCategorias(?array $categorias): self
     {
-        $this->categoria = $categoria;
+        $this->categorias = $categorias;
 
         return $this;
     }
@@ -184,3 +182,6 @@ Class Articulo {
         return $this;
     }
 }
+
+
+
