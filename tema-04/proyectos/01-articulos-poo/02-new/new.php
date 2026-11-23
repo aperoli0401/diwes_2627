@@ -35,6 +35,7 @@ $tabla_articulos->addArticulos();
 $articulos = $tabla_articulos->getTarticulos();
 
 // 4. Obtener el array de marcas - es  metodo estático, no necesitamos crear un objeto de la clase Tarticulos
+// Para poder generar dinamicamente la lista de marcas
 $marcas = Tarticulos::getMarcas();
 
 // 5. Obtener el array de categorías - es  metodo estático, no necesitamos crear un objeto de la clase Tarticulos
