@@ -49,7 +49,6 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <!-- Marca -->
 
                     <!-- unidades -->
                     <div class="mb-3">

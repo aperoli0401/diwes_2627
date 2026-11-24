@@ -3,7 +3,7 @@
 
 <head>
     <!-- Cargar HEAD de la página -->
-    <?php require_once __DIR__ . '/partials/head.partial.php'; ?>
+    <?php require_once __DIR__ . '/layouts/head.layout.php'; ?>
     <title>Proyecto 4.2 - CRUD Artículos - POO Sin Encapsulamiento</title>
 </head>
 
@@ -13,7 +13,7 @@
 
         <!-- cabecera HEADER de la aplicación -->
         <?php require_once __DIR__ . '/partials/header.partial.php'; ?>
-        
+
 
         <!-- contenido principal de la aplicación -->
         <main>
@@ -50,8 +50,6 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <!-- Marca -->
-
                     <!-- unidades -->
                     <div class="mb-3">
                         <label for="unidades" class="form-label">Unidades:</label>
@@ -89,7 +87,7 @@
 
         <!-- pie de página de la aplicación -->
         <?php require_once __DIR__ . '/partials/footer.partial.php'; ?>
-        
+
 
         <!-- js bootstrap básico 6.0 -->
         <?php require_once __DIR__ . '/layouts/js_bootstrap.php'; ?>
